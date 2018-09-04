@@ -1,10 +1,20 @@
 import React from 'react'
 
-export default function Person() {
+function Person(props) {
     return (
         <div className="person">
-            <h3>Max</h3>
-            <p>Your Age: 28</p>
+            <h3>{props.name}</h3>
+            <p>Your Age: {props.age}</p>
         </div>
     )
 }
+
+let app = (
+    <div>
+        <Person name="Max" age="28" />
+        <Person name="Manu" age="29" />
+        <Person name="Lilu" age="25" />
+    </div>
+)
+
+export {app};

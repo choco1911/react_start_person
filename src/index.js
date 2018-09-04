@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Person from './person';
+import {app} from './person';
 
-ReactDOM.render(<Person />, document.getElementById('rapp'));
+ReactDOM.render(app, document.getElementById('rapp'));
