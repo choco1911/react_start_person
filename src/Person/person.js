@@ -5,10 +5,9 @@ import './person.css'
 const person = () => {
     return (
         <div>
-            <p>who are bro?</p>
-            <p>who are bro?</p>
-            <p>who are bro?</p>
-            <p>who are bro?</p>
+            <p>I'm a person and I'm {Math.floor(Math.random() * 30)}</p>
+            <p>I'm a person and I'm {Math.floor(Math.random() * 30)}</p>
+            <p>I'm a person and I'm {Math.floor(Math.random() * 30)}</p>
         </div>
     )
 }
