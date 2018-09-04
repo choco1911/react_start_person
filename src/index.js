@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Person from './Person/person'
-import './person'
+import App from './App'
 
-ReactDOM.render(<Person />, document.getElementById('rapp'));
+ReactDOM.render(<App />, document.getElementById('rapp'));

@@ -2,12 +2,10 @@ import React from 'react'
 import './person.css'
 
 
-const person = () => {
+const person = (props) => {
     return (
         <div>
-            <p>I'm a person and I'm {Math.floor(Math.random() * 30)}</p>
-            <p>I'm a person and I'm {Math.floor(Math.random() * 30)}</p>
-            <p>I'm a person and I'm {Math.floor(Math.random() * 30)}</p>
+            <p>I'm a {props.name} and I'm {props.age}</p>
         </div>
     )
 }
