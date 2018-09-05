@@ -25,7 +25,7 @@ class App extends Component {
         return (
             <div className="App">
                 {/* Method 1: passing variable to switchNameHandler */}
-                <button onClick={this.switchNameHandler.bind(this, 'Maximilian')}>Switch Name</button>
+                <button onClick={() => this.switchNameHandler('Maximilian')}>Switch Name</button>
 
                 {/* here i pass click hander to the function component Person */}
                 <Person
