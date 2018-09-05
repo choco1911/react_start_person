@@ -1,0 +1,14 @@
+.App {
+    margin: auto;
+    width: 500px;
+    border: 1px solid transparent;
+    background-color: #50394c;
+
+}
+
+button {
+    margin: auto;
+    margin-top: 16px;
+    width: 130px;
+    display: block;
+}

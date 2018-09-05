@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import Person from './Person/person'
+import './App.css'
 
 class App extends Component {
     state = {
@@ -32,10 +33,15 @@ class App extends Component {
     }
 
     render () {
+        const style = {
+            backgroundColor: 'white',
+            font: 'inherit',
+            border: '1px solid red',
+            padding: '8px',
+            cursor: 'pointeer'
+        }
         return (
             <div className="App">
-                {/* Method 1: passing variable to switchNameHandler */}
-                <button onClick={() => this.switchNameHandler('Maximilian')}>Switch Name</button>
 
                 {/* here i pass click hander to the function component Person */}
                 <Person
@@ -49,6 +55,11 @@ class App extends Component {
                 <Person
                     name={this.state.persons[2].name}
                     age={this.state.persons[2].age} />
+
+                {/* Method 1: passing variable to switchNameHandler */}
+                <button style = {style} onClick={() => this.switchNameHandler('Maximilian')}>
+                    Switch Name
+                </button>
             </div>
         )
     }
