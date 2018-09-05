@@ -10,11 +10,11 @@ class App extends Component {
         ]
     }
 
-    switchNameHandler = () => {
+    switchNameHandler = (newName) => {
 //        console.log('Was clicked!');
         this.setState({
             persons: [
-                {name: 'Maximilian', age:28},
+                {name: newName, age:28},
                 {name: 'Manu', age:29},
                 {name: 'Stephanie', age:27}
             ]
@@ -24,10 +24,20 @@ class App extends Component {
     render () {
         return (
             <div className="App">
-                <button onClick={this.switchNameHandler}>Switch Name</button>
-                <Person name={this.state.persons[0].name} age={this.state.persons[0].age}/>
-                <Person name={this.state.persons[1].name} age={this.state.persons[1].age}/>
-                <Person name={this.state.persons[2].name} age={this.state.persons[2].age}/>
+                {/* Method 1: passing variable to switchNameHandler */}
+                <button onClick={this.switchNameHandler.bind(this, 'Maximilian')}>Switch Name</button>
+
+                {/* here i pass click hander to the function component Person */}
+                <Person
+                    name={this.state.persons[0].name}
+                    age={this.state.persons[0].age} />
+                <Person
+                    name={this.state.persons[1].name}
+                    age={this.state.persons[1].age}
+                    click={this.switchNameHandler.bind(this, 'Max!!!')} />
+                <Person
+                    name={this.state.persons[2].name}
+                    age={this.state.persons[2].age} />
             </div>
         )
     }

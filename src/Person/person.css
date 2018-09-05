@@ -2,4 +2,5 @@ p {
     background-color: peru;
     width: 300px;
     text-align: center;
+    border: 1px solid #000;
 }
