@@ -34,10 +34,10 @@ class App extends Component {
 
     render () {
         const style = {
-            backgroundColor: 'white',
+            marginBottom: '20px',
+            backgroundColor: '#ffd54f',
+            boxShadow: '0 2px 3px #000',
             font: 'inherit',
-            border: '1px solid red',
-            padding: '8px',
             cursor: 'pointeer'
         }
         return (
