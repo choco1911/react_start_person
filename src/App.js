@@ -5,9 +5,9 @@ import './App.css'
 class App extends Component {
     state = {
         persons: [
-            {name: 'Max', age:28},
-            {name: 'Manu', age:29},
-            {name: 'Stephanie', age:26}
+            {id: '001', name: 'Max', age:28},
+            {id: '002', name: 'Manu', age:29},
+            {id: '003', name: 'Stephanie', age:26}
         ]
     }
 
@@ -22,8 +22,10 @@ class App extends Component {
     }
 
     deletePersonHandler = (personIndex) => {
-        {/* bad practice because it's muttate original state.person which get by reference */}
-        const persons = this.state.persons
+        {/* using immutable approuch ES5 style */}
+        {/* const persons = this.state.persons.slice() */}
+        {/* using immutable approuch ES6 style spread operator */}
+        const persons = [...this.state.persons]
         persons.splice(personIndex, 1)
         this.setState({persons: persons})
     }
@@ -50,7 +52,9 @@ class App extends Component {
                     {this.state.persons.map((person, index) => {
                         return <Person click={() => this.deletePersonHandler(index)}
                                 name={person.name}
-                                age={person.age} />
+                                age={person.age}
+                                key={person.id}
+                                />
                     })}
                 </div>
             )
