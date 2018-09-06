@@ -47,12 +47,11 @@ class App extends Component {
             font: 'inherit',
             cursor: 'pointeer'
         }
-        return (
-            <div className="App">
 
-                {/* here i pass click hander to the function component Person */}
-                { this.state.showPersons ?
-                    <div>
+        let persons = null;
+        if (this.state.showPersons) {
+            persons = (
+                <div>
                     <Person
                         name={this.state.persons[0].name}
                         age={this.state.persons[0].age} />
@@ -64,9 +63,15 @@ class App extends Component {
                     <Person
                         name={this.state.persons[2].name}
                         age={this.state.persons[2].age} />
-                    </div> : null
-                }
+                </div>
+            )
+        }
+        
+        return (
+            <div className="App">
 
+                {/* here i pass click hander to the function component Person */}
+                {persons}
                 {/* Method 1: passing variable to switchNameHandler */}
                 <button style = {style} onClick={this.togglePersonsHandler}>
                     {this.state.showPersons ? "Close" : "Open"}
