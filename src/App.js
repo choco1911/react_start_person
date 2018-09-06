@@ -18,7 +18,8 @@ class App extends Component {
                 {name: newName, age: 28},
                 {name: 'Manu', age: 29},
                 {name: 'Stephanie', age: 27}
-            ]
+            ],
+            showPersons: false
         })
     }
 
@@ -30,6 +31,12 @@ class App extends Component {
                 {name: 'Stephanie', age: 27}
             ]
         })
+    }
+
+    togglePersonsHandler = () => {
+        const doesShow = this.state.showPersons
+        {/* setState merge specific values with state object */}
+        this.setState({showPersons: !doesShow})
     }
 
     render () {
@@ -44,23 +51,28 @@ class App extends Component {
             <div className="App">
 
                 {/* here i pass click hander to the function component Person */}
-                <Person
-                    name={this.state.persons[0].name}
-                    age={this.state.persons[0].age} />
-                <Person
-                    name={this.state.persons[1].name}
-                    age={this.state.persons[1].age}
-                    click={this.switchNameHandler.bind(this, 'Max!!!')}
-                    changed={this.nameChangedHandler} />
-                <Person
-                    name={this.state.persons[2].name}
-                    age={this.state.persons[2].age} />
+                { this.state.showPersons ?
+                    <div>
+                    <Person
+                        name={this.state.persons[0].name}
+                        age={this.state.persons[0].age} />
+                    <Person
+                        name={this.state.persons[1].name}
+                        age={this.state.persons[1].age}
+                        click={this.switchNameHandler.bind(this, 'Max!!!')}
+                        changed={this.nameChangedHandler} />
+                    <Person
+                        name={this.state.persons[2].name}
+                        age={this.state.persons[2].age} />
+                    </div> : null
+                }
 
                 {/* Method 1: passing variable to switchNameHandler */}
-                <button style = {style} onClick={() => this.switchNameHandler('Maximilian')}>
-                    Switch Name
+                <button style = {style} onClick={this.togglePersonsHandler}>
+                    {this.state.showPersons ? "Close" : "Open"}
                 </button>
             </div>
+
         )
     }
 }
