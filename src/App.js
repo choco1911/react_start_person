@@ -64,9 +64,21 @@ class App extends Component {
             )
             style.backgroundColor = 'red';
         }
+    //    let  classes = ['red', 'bold'].join(' ')
+        let  classes = []
+        if (this.state.persons.length <= 2) {
+            classes.push('red')
+        }
+
+        if (this.state.persons.length <= 1) {
+            classes.push('bold')
+        }
+
+
         return (
             <div className="App">
 
+                <p className={classes.join(' ')}>This is really working!</p>
                 {/* here i pass click hander to the function component Person */}
                 {persons}
                 {/* Method 1: passing variable to switchNameHandler

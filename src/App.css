@@ -19,3 +19,11 @@
     cursor: pointer;
     border: 1px dotted #000;
 }
+
+.red {
+    color: red;
+}
+
+.bold {
+    font-weight: bold;
+}
