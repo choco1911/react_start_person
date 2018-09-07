@@ -44,17 +44,10 @@ class App extends Component {
     }
 
     render () {
-        {/*
         const style = {
-            marginBottom: '20px',
-            backgroundColor: '#ffd54f',
-            boxShadow: '0 2px 3px #000',
-            font: 'inherit',
-            cursor: 'pointer',
-            overflow: 'visible'
+            backgroundColor: 'green',
+            color: 'white'
         }
-        */}
-
         let persons = null;
         if (this.state.showPersons) {
             persons = (
@@ -69,6 +62,7 @@ class App extends Component {
                     })}
                 </div>
             )
+            style.backgroundColor = 'red';
         }
         return (
             <div className="App">
@@ -78,7 +72,9 @@ class App extends Component {
                 {/* Method 1: passing variable to switchNameHandler
                 <button className="toggle" style = {style} onClick={this.togglePersonsHandler}>
                 */}
-                <button className="toggle" onClick={this.togglePersonsHandler}>
+                <button
+                    style = {style}
+                    className="toggle" onClick={this.togglePersonsHandler}>
                     {this.state.showPersons ? "Close" : "Open"}
                 </button>
             </div>
