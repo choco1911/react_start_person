@@ -1,0 +1,28 @@
+.Cockpit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+p.start {
+    margin: auto;
+}
+
+.toggle {
+    width: 60px;
+    height: 20px;
+    margin: auto;
+    padding: 0;
+    overflow: visible;
+    background: #efeeff;
+    cursor: pointer;
+    border: 1px dotted #000;
+}
+
+.red {
+    color: red;
+}
+
+.bold {
+    font-weight: bold;
+}

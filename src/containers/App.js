@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import Persons from '../components/PersonsList/PersonsList'
+import Cockpit from '../components/Cockpit/Cockpit'
 import './App.css'
 
 class App extends Component {
@@ -44,48 +45,28 @@ class App extends Component {
     }
 
     render () {
-        const style = {
-            backgroundColor: 'green',
-            color: 'white'
-        }
         let persons = null;
         if (this.state.showPersons) {
             persons = (
                 <div>
                     <Persons
                         persons={this.state.persons}
+                        showPersons={this.state.showPersons}
                         clicked={this.deletePersonHandler}
                         changed={this.nameChangedHandler}
                     />
                 </div>
             )
-            style.backgroundColor = 'red';
         }
-    //    let  classes = ['red', 'bold'].join(' ')
-        let  classes = []
-        if (this.state.persons.length <= 2) {
-            classes.push('red')
-        }
-
-        if (this.state.persons.length <= 1) {
-            classes.push('bold')
-        }
-
 
         return (
             <div className="App">
-
-                <p className={classes.join(' ')}>This is really working!</p>
-                {/* here i pass click hander to the function component Person */}
+                <Cockpit
+                    persons={this.state.persons}
+                    toggle={this.togglePersonsHandler}
+                    showPersons={this.state.showPersons}
+                />
                 {persons}
-                {/* Method 1: passing variable to switchNameHandler
-                <button className="toggle" style = {style} onClick={this.togglePersonsHandler}>
-                */}
-                <button
-                    style = {style}
-                    className="toggle" onClick={this.togglePersonsHandler}>
-                    {this.state.showPersons ? "Close" : "Open"}
-                </button>
             </div>
 
         )
