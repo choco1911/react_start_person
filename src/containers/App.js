@@ -4,6 +4,18 @@ import Cockpit from '../components/Cockpit/Cockpit'
 import './App.css'
 
 class App extends Component {
+    constructor(props) {
+        super(props)
+        console.log('[App.js] Inside Constructor', props)
+    }
+
+    componentWillMount () {
+        console.log('[App.js] Inside componentWillMount')
+    }
+
+    componentDidMount () {
+        console.log('[App.js] Inside componentDidMount')
+    }
 
     state = {
         persons: [
@@ -47,6 +59,7 @@ class App extends Component {
     }
 
     render () {
+        console.log('[App.js] Inside Render Method')
         let persons = null;
         if (this.state.showPersons) {
             persons = (
