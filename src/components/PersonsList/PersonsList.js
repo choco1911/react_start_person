@@ -21,14 +21,18 @@ class Persons extends Component {
 
     shouldComponentUpdate(nextProps, nextState) {
         console.log('[Update PersonsList.js] Inside shouldComponentUpdate', nextProps, nextState)
-        //return false
-        return nextProps.persons !== this.props.persons
+        //return true
+        // if any of this props changes then trigger update
+        return nextProps.persons !== this.props.persons ||
+               nextProps.changed !== this.props.changed ||
+               nextProps.clicked !== this.props.clicked
+
     }
 
     componentWillUpdate (nextProps, nextState) {
         console.log('[Update PersonsList.js] Inside componentWillUpdate', nextProps, nextState)
     }
-    
+
     componentDidUpdate () {
         console.log('[Update PersonsList.js] Inside componentDidUpdate')
     }
