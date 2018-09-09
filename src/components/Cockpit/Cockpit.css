@@ -4,6 +4,9 @@
     justify-content: center;
 }
 
+h1 {
+    margin: auto;
+}
 p.start {
     margin: auto;
 }

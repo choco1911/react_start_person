@@ -4,6 +4,7 @@ import Cockpit from '../components/Cockpit/Cockpit'
 import './App.css'
 
 class App extends Component {
+
     state = {
         persons: [
             {id: '001', name: 'Max', age:28},
@@ -11,7 +12,6 @@ class App extends Component {
             {id: '003', name: 'Stephanie', age:26}
         ]
     }
-
 
 
     nameChangedHandler = (event, id) => {
@@ -64,6 +64,7 @@ class App extends Component {
         return (
             <div className="App">
                 <Cockpit
+                    title = {this.props.title}
                     persons={this.state.persons}
                     toggle={this.togglePersonsHandler}
                     showPersons={this.state.showPersons}

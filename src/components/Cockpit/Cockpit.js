@@ -9,7 +9,7 @@ const cockpit = (props) => {
     }
 
     if (props.showPersons) {
-        style.backgroundColor = 'red'  
+        style.backgroundColor = 'red'
     }
 
     // start - it's a selector name
@@ -24,6 +24,7 @@ const cockpit = (props) => {
 
     return (
         <div className="Cockpit">
+            <h1>{props.title}</h1>
             <p className={classes.join(' ')}>This is really working!</p>
             <button
                 style = {style}
