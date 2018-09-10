@@ -40,7 +40,9 @@ class App extends PureComponent {
             {id: '001', name: 'Max', age:28},
             {id: '002', name: 'Manu', age:29},
             {id: '003', name: 'Stephanie', age:26}
-        ]
+        ],
+        showPersons: false,
+        toggleClicked: 0
     }
 
 
@@ -62,7 +64,7 @@ class App extends PureComponent {
     }
 
     deletePersonHandler = (personIndex) => {
-        {/* using immutable approuch ES5 style */}
+        {/* using immutable approuchES5 style */}
         {/* const persons = this.state.persons.slice() */}
         {/* using immutable approuch ES6 style spread operator */}
         const persons = [...this.state.persons]
@@ -73,7 +75,12 @@ class App extends PureComponent {
     togglePersonsHandler = () => {
         const doesShow = this.state.showPersons
         {/* setState merge specific values with state object */}
-        this.setState({showPersons: !doesShow})
+        this.setState((prevState, props) => {
+            return {
+                showPersons: !doesShow,
+                toggleClicked: prevState.toggleClicked + 1
+            }
+         })
     }
 
     render () {
