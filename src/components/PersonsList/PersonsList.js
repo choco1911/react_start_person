@@ -39,7 +39,8 @@ class Persons extends PureComponent {
     render () {
         console.log('[PersonsList.js] Inside Render Method')
         return this.props.persons.map((person, index) => {
-            return <Person click={() => this.props.clicked(index)}
+            return <Person
+                click={() => this.props.clicked(index)}
                 name={person.name}
                 age={person.age}
                 key={person.id}

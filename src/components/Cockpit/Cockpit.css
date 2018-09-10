@@ -1,8 +1,9 @@
-.Cockpit {
+/*.Cockpit {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
+*/
 
 h1 {
     margin: auto;

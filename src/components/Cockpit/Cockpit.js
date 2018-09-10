@@ -1,5 +1,6 @@
 import React from 'react'
 import './Cockpit.css'
+import Aux from '../../hoc/Aux.js'
 
 
 const cockpit = (props) => {
@@ -23,7 +24,7 @@ const cockpit = (props) => {
     }
 
     return (
-        <div className="Cockpit">
+        <Aux>
             <h1>{props.title}</h1>
             <p className={classes.join(' ')}>This is really working!</p>
             <button
@@ -31,8 +32,7 @@ const cockpit = (props) => {
                 className="toggle" onClick={props.toggle}>
                 {props.showPersons ? "Close" : "Open"}
             </button>
-        </div>
-
+        </Aux>
     )
 }
 

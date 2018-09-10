@@ -28,6 +28,13 @@ class Person extends Component {
                 <input type="text" onChange={this.props.change} value={this.props.name} />
             </div>
         )
+//        console.log('[Person.js] Inside this.props.children', this.props.children) // undefined
+//        return [
+//                <p key="1">I'm a {this.props.name} and I'm {this.props.age}</p>,
+//                <p key="2">{this.props.children}</p>,
+//                <button key="3" className="del" onClick={this.props.click}>Delete</button>,
+//                <input key="4" type="text" onChange={this.props.change} value={this.props.name} />
+//        ]
     }
 }
 
