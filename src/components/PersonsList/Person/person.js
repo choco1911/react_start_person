@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import './person.css'
 import Aux from '../../../hoc/Aux'
 import withClass from '../../../hoc/withClass'
+import {AuthContext} from '../../../containers/App'
 
 
 class Person extends Component {
@@ -31,7 +32,9 @@ class Person extends Component {
         console.log('[Person.js] Inside Render Method')
         return (
             <Aux>
-                {this.props.authenticated ? <p>I'm authenticated</p> : null } 
+                <AuthContext.Consumer>
+                    {auth => auth ? <p>I'm authenticated</p> : null }
+                </AuthContext.Consumer>
                 <div className="wrapper">
                     <p>I'm a {this.props.name} and I'm {this.props.age}</p>
                     <button className="del" onClick={this.props.click}>Delete</button>
