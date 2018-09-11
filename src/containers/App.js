@@ -42,7 +42,8 @@ class App extends PureComponent {
             {id: '003', name: 'Stephanie', age:26}
         ],
         showPersons: false,
-        toggleClicked: 0
+        toggleClicked: 0,
+        authenticated: false
     }
 
 
@@ -83,6 +84,10 @@ class App extends PureComponent {
          })
     }
 
+    loginHandler = () => {
+        this.setState({authenticated: true})
+    }
+
     render () {
         console.log('[App.js] Inside Render Method')
         let persons = null;
@@ -94,6 +99,7 @@ class App extends PureComponent {
                         showPersons={this.state.showPersons}
                         clicked={this.deletePersonHandler}
                         changed={this.nameChangedHandler}
+                        isAuthenticated={this.state.authenticated}
                     />
                 </div>
             )
@@ -106,6 +112,7 @@ class App extends PureComponent {
                     title = {this.props.title}
                     persons={this.state.persons}
                     toggle={this.togglePersonsHandler}
+                    login={this.loginHandler}
                     showPersons={this.state.showPersons}
                 />
                 {persons}
